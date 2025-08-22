@@ -4,11 +4,12 @@ import com.example.pizza.model.Pizza;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PizzaService {
 
-    private ArrayList<Pizza> pizzaList = new ArrayList<Pizza>();
+    private final ArrayList<Pizza> pizzaList = new ArrayList<Pizza>();
 
     public Pizza savePizza(Pizza pizza){
         pizzaList.add(pizza);
@@ -22,5 +23,9 @@ public class PizzaService {
             }
         }
         return null;
+    }
+
+    public List<Pizza> findAllPizza(){
+        return pizzaList;
     }
 }
